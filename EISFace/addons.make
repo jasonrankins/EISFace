@@ -1,0 +1,9 @@
+ofxOpenCv
+ofxOsc
+ofxXmlSettings
+ofxAccelerometer
+ofxCv
+ofxFaceTracker
+ofxGui
+ofxiPhone
+ofxMultiTouch
