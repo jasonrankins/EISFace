@@ -1189,7 +1189,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
@@ -1200,7 +1202,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iPhone_Prefix.pch;
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;
@@ -1287,7 +1291,7 @@
 					../openFrameworks/addons/ofxMultiTouch/libs,
 					../openFrameworks/addons/ofxMultiTouch/src,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_LIBS)",
@@ -1308,7 +1312,7 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WARNING_LDFLAGS = "-no_arch_warnings";
 			};
 			name = Debug;
@@ -1393,7 +1397,7 @@
 					../openFrameworks/addons/ofxMultiTouch/libs,
 					../openFrameworks/addons/ofxMultiTouch/src,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(OF_CORE_LIBS)",
@@ -1413,7 +1417,7 @@
 				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WARNING_LDFLAGS = "-no_arch_warnings";
 			};
 			name = Release;
