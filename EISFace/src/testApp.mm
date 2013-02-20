@@ -1,5 +1,7 @@
 #include "testApp.h"
 
+using namespace ofxCv;
+
 //--------------------------------------------------------------
 void testApp::setup(){	
 	// initialize the accelerometer
@@ -10,19 +12,24 @@ void testApp::setup(){
 	
 	ofBackground(127,127,127);
     
-    ofSetVerticalSync(true);
+    ofSetFrameRate(30);
+    ofSetVerticalSync(false);
 	ofSetDrawBitmapMode(OF_BITMAPMODE_MODEL_BILLBOARD);
-	cam.initGrabber(2048, 1536);
 	
+    cam.setDeviceID(1);
+    cam.initGrabber(cam.getWidth(), cam.getHeight());
+    
 	tracker.setup();
-    tracker.setRescale(.5);
+    tracker.setRescale(0.5);
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
     cam.update();
 	if(cam.isFrameNew()) {
-		tracker.update(ofxCv::toCv(cam));
+        image.setFromPixels(cam.getPixels(), cam.getWidth(), cam.getHeight(), OF_IMAGE_COLOR);
+        
+		tracker.update(toCv(image));
 	}
 }
 
@@ -30,7 +37,7 @@ void testApp::update(){
 void testApp::draw(){
 	ofSetColor(255);
 	cam.draw(0, 0);
-    cam.draw(0, 0, 1536, 2048);
+    cam.draw(0, 0, 640, 960);
 	ofDrawBitmapString(ofToString((int) ofGetFrameRate()), 10, 20);
 	
 	ofPolyline leftEye = tracker.getImageFeature(ofxFaceTracker::LEFT_EYE);

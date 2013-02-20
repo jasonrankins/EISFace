@@ -28,6 +28,7 @@ class testApp : public ofxiPhoneApp{
 
         ofVideoGrabber cam;
         ofxFaceTracker tracker;
+        ofImage image;
 };
 
 
