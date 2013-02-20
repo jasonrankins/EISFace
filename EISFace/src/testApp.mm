@@ -9,16 +9,45 @@ void testApp::setup(){
 	//iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
 	
 	ofBackground(127,127,127);
+    
+    ofSetVerticalSync(true);
+	ofSetDrawBitmapMode(OF_BITMAPMODE_MODEL_BILLBOARD);
+	cam.initGrabber(2048, 1536);
+	
+	tracker.setup();
+    tracker.setRescale(.5);
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
-
+    cam.update();
+	if(cam.isFrameNew()) {
+		tracker.update(ofxCv::toCv(cam));
+	}
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
+	ofSetColor(255);
+	cam.draw(0, 0);
+    cam.draw(0, 0, 1536, 2048);
+	ofDrawBitmapString(ofToString((int) ofGetFrameRate()), 10, 20);
 	
+	ofPolyline leftEye = tracker.getImageFeature(ofxFaceTracker::LEFT_EYE);
+	ofPolyline rightEye = tracker.getImageFeature(ofxFaceTracker::RIGHT_EYE);
+	ofPolyline faceOutline = tracker.getImageFeature(ofxFaceTracker::FACE_OUTLINE);
+	
+	ofSetLineWidth(2);
+	ofSetColor(ofColor::red);
+	leftEye.draw();
+	ofSetColor(ofColor::green);
+	rightEye.draw();
+	ofSetColor(ofColor::blue);
+	faceOutline.draw();
+	
+	ofSetLineWidth(1);
+	ofSetColor(255);
+	tracker.draw();
 }
 
 //--------------------------------------------------------------
@@ -28,7 +57,7 @@ void testApp::exit(){
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs & touch){
-
+    tracker.reset();
 }
 
 //--------------------------------------------------------------

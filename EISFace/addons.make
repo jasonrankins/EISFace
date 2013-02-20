@@ -5,5 +5,5 @@ ofxAccelerometer
 ofxCv
 ofxFaceTracker
 ofxGui
-ofxiPhone
 ofxMultiTouch
+ofxUI

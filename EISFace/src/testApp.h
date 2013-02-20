@@ -4,6 +4,9 @@
 #include "ofxiPhone.h"
 #include "ofxiPhoneExtras.h"
 
+#include "ofxCv.h"
+#include "ofxFaceTracker.h"
+
 class testApp : public ofxiPhoneApp{
 	
     public:
@@ -23,6 +26,8 @@ class testApp : public ofxiPhoneApp{
         void gotMemoryWarning();
         void deviceOrientationChanged(int newOrientation);
 
+        ofVideoGrabber cam;
+        ofxFaceTracker tracker;
 };
 
 
