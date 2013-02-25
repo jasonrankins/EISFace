@@ -21,23 +21,24 @@ void testApp::setup(){
     
 	tracker.setup();
     tracker.setRescale(0.5);
+    framePadding = 0;
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
     cam.update();
-	if(cam.isFrameNew()) {
+    if(cam.isFrameNew()){// && cam.getPixelsRef().size() > 0) {
         image.setFromPixels(cam.getPixels(), cam.getWidth(), cam.getHeight(), OF_IMAGE_COLOR);
-        
-		tracker.update(toCv(image));
+        tracker.update(toCv(image));
+        //Mat pixels = toCv(cam.getPixelsRef());
+		//tracker.update(toCv(cam.getPixelsRef()));
 	}
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
 	ofSetColor(255);
-	cam.draw(0, 0);
-    cam.draw(0, 0, 640, 960);
+    cam.draw(0, 0, 768, 1024);
 	ofDrawBitmapString(ofToString((int) ofGetFrameRate()), 10, 20);
 	
 	ofPolyline leftEye = tracker.getImageFeature(ofxFaceTracker::LEFT_EYE);
