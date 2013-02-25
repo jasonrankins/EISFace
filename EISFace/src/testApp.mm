@@ -20,7 +20,7 @@ void testApp::setup(){
     cam.initGrabber(cam.getWidth(), cam.getHeight());
     
 	tracker.setup();
-    tracker.setRescale(0.5);
+    tracker.setRescale(0.25);
     framePadding = 0;
 }
 
