@@ -2,14 +2,7 @@
 
 using namespace ofxCv;
 
-//--------------------------------------------------------------
-void testApp::setup(){	
-	// initialize the accelerometer
-	ofxAccelerometer.setup();
-	
-	//If you want a landscape oreintation 
-	//iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
-	
+void testApp::setup(){
 	ofBackground(127,127,127);
     
     ofSetFrameRate(30);
@@ -21,13 +14,11 @@ void testApp::setup(){
     
 	tracker.setup();
     tracker.setRescale(0.25);
-    framePadding = 0;
 }
 
-//--------------------------------------------------------------
 void testApp::update(){
     cam.update();
-    if(cam.isFrameNew()){// && cam.getPixelsRef().size() > 0) {
+    if(cam.isFrameNew()) {
         image.setFromPixels(cam.getPixels(), cam.getWidth(), cam.getHeight(), OF_IMAGE_COLOR);
         tracker.update(toCv(image));
         //Mat pixels = toCv(cam.getPixelsRef());
@@ -35,10 +26,9 @@ void testApp::update(){
 	}
 }
 
-//--------------------------------------------------------------
 void testApp::draw(){
 	ofSetColor(255);
-    cam.draw(0, 0, 768, 1024);
+    cam.draw(0, 0, ofGetWidth(), ofGetHeight());
 	ofDrawBitmapString(ofToString((int) ofGetFrameRate()), 10, 20);
 	
 	ofPolyline leftEye = tracker.getImageFeature(ofxFaceTracker::LEFT_EYE);
@@ -58,52 +48,42 @@ void testApp::draw(){
 	tracker.draw();
 }
 
-//--------------------------------------------------------------
 void testApp::exit(){
 
 }
 
-//--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs & touch){
     tracker.reset();
 }
 
-//--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs & touch){
 
 }
 
-//--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs & touch){
 
 }
 
-//--------------------------------------------------------------
 void testApp::touchDoubleTap(ofTouchEventArgs & touch){
 
 }
 
-//--------------------------------------------------------------
 void testApp::touchCancelled(ofTouchEventArgs & touch){
     
 }
 
-//--------------------------------------------------------------
 void testApp::lostFocus(){
 
 }
 
-//--------------------------------------------------------------
 void testApp::gotFocus(){
 
 }
 
-//--------------------------------------------------------------
 void testApp::gotMemoryWarning(){
 
 }
 
-//--------------------------------------------------------------
 void testApp::deviceOrientationChanged(int newOrientation){
 
 }
