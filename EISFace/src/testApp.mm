@@ -53,6 +53,7 @@ void testApp::setup() {
 #ifdef TARGET_OSX
 	ofSetDataPathRoot("../Resources/data/");
 #endif
+    tracker.setRescale(0.125);
 	loadSettings();
 }
 
@@ -62,7 +63,9 @@ void testApp::update() {
     
 	videoSource->update();
 	if(videoSource->isFrameNew()) {
-		tracker.update(toCv(*videoSource));
+        //image.setFromPixels(videoSource->getPixelsRef());
+        image.setFromPixels(cam.getPixels(), cam.getWidth(), cam.getHeight(), OF_IMAGE_COLOR);
+		tracker.update(toCv(image));//toCv(*videoSource));
         
 		clearBundle();
         
@@ -94,12 +97,21 @@ void testApp::update() {
 	}
 }
 
-void testApp::draw() {
-	ofSetColor(255);
-	videoSource->draw(0, 0);
+#pragma mark - Debug Drawing
+void testApp::drawStringWithShadow(string string, int x, int y) {
+    ofSetColor(0);
+    ofDrawBitmapString(string, x+1, y+1);
+    ofSetColor(255);
+    ofDrawBitmapString(string, x, y);
+}
+
+void testApp::drawStatus(int x, int y) {
+    string status = "";
     
-	if(tracker.getFound()) {
-		ofDrawBitmapString(ofToString((int) ofGetFrameRate()), 10, 20);
+    if(bPaused) {
+        status = "paused";
+	} else if(tracker.getFound()) {
+		status = "tracking face";
         
 		if(bDrawMesh) {
 			ofSetLineWidth(1);
@@ -114,15 +126,50 @@ void testApp::draw() {
 			ofScale(10,10,10);
 			ofDrawAxis(scale);
 			ofPopView();
-		}
+		} else {
+            status += " // mesh hidden";
+        }
 	} else {
-		ofDrawBitmapString("searching for face...", 10, 20);
+		status = "searching for face";
 	}
+    drawStringWithShadow(status, x, y);
+}
+
+void testApp::drawFPS(int x, int y) {
+    string fps = ofToString((int) ofGetFrameRate());
+    drawStringWithShadow(fps, x, y);
+}
+
+void testApp::drawSelectedCamera(int x, int y) {
+    string camera;
+    switch ((int)selectedCamera) {
+        case cameraIdRear:
+            camera = "rear camera";
+            break;
+        case cameraIdFront:
+            camera = "front camera";
+            break;
+        default:
+            camera = "unknown camera";
+            break;
+    }
+    drawStringWithShadow(camera, x, y);
+}
+
+void testApp::drawOscDestination(int x, int y) {
+    string destination = host + ":" + ofToString((int) port);
+    drawStringWithShadow(destination, x, y);
+}
+
+void testApp::draw() {
+	ofSetColor(255);
+	videoSource->draw(0, 0);
     
-	if(bPaused) {
-		ofSetColor(255, 0, 0);
-		ofDrawBitmapString( "paused", 10, 32);
-	}
+    drawOscDestination(10, 20);
+    drawStatus(10, 40);
+    drawSelectedCamera(10, 60);
+    drawFPS(10, 80);
+    
     
 	if(!bUseCamera) {
 		ofSetColor(255, 0, 0);
@@ -171,7 +218,11 @@ void testApp::loadSettings() {
 	xml.pushTag("camera");
 	if(xml.getNumTags("device") > 0) {
 		cam.setDeviceID(xml.getValue("device", 0));
-	}
+        selectedCamera = (cameraId)xml.getValue("device", 0);
+	} else {
+        cam.setDeviceID(1);
+        selectedCamera = (cameraId)1;
+    }
 	if(xml.getNumTags("framerate") > 0) {
 		cam.setDesiredFrameRate(xml.getValue("framerate", 30));
 	}
@@ -242,6 +293,7 @@ void testApp::loadSettings() {
 	host = xml.getValue("host", "localhost");
 	port = xml.getValue("port", 8338);
 	osc.setup(host, port);
+    
 	xml.popTag();
     
 	osc.setup(host, port);
@@ -273,11 +325,11 @@ void testApp::touchMoved(ofTouchEventArgs & touch){
 }
 
 void testApp::touchUp(ofTouchEventArgs & touch){
-    
+    bDrawMesh = !bDrawMesh;
 }
 
 void testApp::touchDoubleTap(ofTouchEventArgs & touch){
-    
+    bPaused = !bPaused;
 }
 
 void testApp::touchCancelled(ofTouchEventArgs & touch){

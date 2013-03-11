@@ -10,7 +10,20 @@
 #include "ofxOsc.h"
 #include "ofxXmlSettings.h"
 
+typedef enum _cameraId {
+    cameraIdFront = 0,
+    cameraIdRear = 1
+} cameraId;
+
 class testApp : public ofxiPhoneApp{
+private:
+    
+    void drawStringWithShadow(string string, int x, int y);
+    void drawStatus(int x, int y);
+    void drawFPS(int x, int y);
+    void drawSelectedCamera(int x, int y);
+    void drawOscDestination(int x, int y);
+    
 public:
     
 #pragma mark - Function Declarations
@@ -64,6 +77,7 @@ public:
     bool bDrawMesh;
 
     ofImage image;
+    cameraId selectedCamera;
 };
 
 
