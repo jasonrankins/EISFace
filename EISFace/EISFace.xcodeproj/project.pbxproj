@@ -55,6 +55,8 @@
 		E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
 		E4D8936E11527B74007E1F53 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936B11527B74007E1F53 /* main.mm */; };
 		E4D8936F11527B74007E1F53 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936D11527B74007E1F53 /* testApp.mm */; };
+		EA9030CF16F17A78001AA249 /* SettingsOverlay.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA9030CD16F17A78001AA249 /* SettingsOverlay.mm */; };
+		EA9030D216F17A8E001AA249 /* SettingsOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA9030D116F17A8E001AA249 /* SettingsOverlay.xib */; };
 		a364421c952ce9bc2c5d2336abdeec63 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6cff932b0463e25a5753acde14687649 /* ofxSlider.cpp */; };
 		aaef872d3796ff5909da3083237565fa /* PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = e3f8511edaf3b2f6118171178f930197 /* PDM.cc */; };
 		acc150eeddea84b1487203622749679b /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15265fc8e4feea099bb5e445a54f0a82 /* UdpSocket.cpp */; };
@@ -206,6 +208,9 @@
 		E4D8936B11527B74007E1F53 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = src/main.mm; sourceTree = SOURCE_ROOT; };
 		E4D8936C11527B74007E1F53 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
 		E4D8936D11527B74007E1F53 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = SOURCE_ROOT; };
+		EA9030CC16F17A78001AA249 /* SettingsOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsOverlay.h; path = gui/SettingsOverlay.h; sourceTree = "<group>"; };
+		EA9030CD16F17A78001AA249 /* SettingsOverlay.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SettingsOverlay.mm; path = gui/SettingsOverlay.mm; sourceTree = "<group>"; };
+		EA9030D116F17A8E001AA249 /* SettingsOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsOverlay.xib; path = gui/SettingsOverlay.xib; sourceTree = "<group>"; };
 		a2207a4a78732005d3859e97d73c8e77 /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscTypes.cpp; path = ../openFrameworks/addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp; sourceTree = SOURCE_ROOT; };
 		a30a9ab87e17b9fef637888d41266044 /* ofxMultiTouch.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMultiTouch.cpp; path = ../openFrameworks/addons/ofxMultiTouch/src/ofxMultiTouch.cpp; sourceTree = SOURCE_ROOT; };
 		a32087f17f2523df90fe378fbdd5cc26 /* UdpSocket.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = UdpSocket.h; path = ../openFrameworks/addons/ofxOsc/libs/oscpack/src/ip/UdpSocket.h; sourceTree = SOURCE_ROOT; };
@@ -334,6 +339,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				EA9030C916F17791001AA249 /* gui */,
 				E4D8936A11527B74007E1F53 /* src */,
 				BB24E1F710DAA51900E9C588 /* openFrameworks */,
 				BB16F26B0F2B646B00518274 /* addons */,
@@ -597,6 +603,16 @@
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
+		};
+		EA9030C916F17791001AA249 /* gui */ = {
+			isa = PBXGroup;
+			children = (
+				EA9030CC16F17A78001AA249 /* SettingsOverlay.h */,
+				EA9030CD16F17A78001AA249 /* SettingsOverlay.mm */,
+				EA9030D116F17A8E001AA249 /* SettingsOverlay.xib */,
+			);
+			name = gui;
+			sourceTree = "<group>";
 		};
 		a0b90d3b0adb9c1716816714bf7f212b /* ofxOpenCv */ = {
 			isa = PBXGroup;
@@ -924,6 +940,7 @@
 				BB24DDCA10DA781C00E9C588 /* ofxiphone-Info.plist in Resources */,
 				E41D3ED713B38FB500A75A5D /* Project.xcconfig in Resources */,
 				E41D3EE613B3906D00A75A5D /* CoreOF.xcconfig in Resources */,
+				EA9030D216F17A8E001AA249 /* SettingsOverlay.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,6 +969,7 @@
 			files = (
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
 				E4D8936F11527B74007E1F53 /* testApp.mm in Sources */,
+				EA9030CF16F17A78001AA249 /* SettingsOverlay.mm in Sources */,
 				039d3e5ba2a6a3bea46bf03bb182ef7a /* ofxCvColorImage.cpp in Sources */,
 				bb5e214b32e344f8b7a26b29792c1dff /* ofxCvContourFinder.cpp in Sources */,
 				7adfcfbc71dd5e2dd2e21675f2ea9355 /* ofxCvFloatImage.cpp in Sources */,

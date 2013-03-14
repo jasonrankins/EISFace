@@ -1,4 +1,8 @@
 #include "testApp.h"
+#include "SettingsOverlay.h"
+
+
+SettingsOverlay * settingsView;
 
 using namespace ofxCv;
 using namespace cv;
@@ -47,14 +51,42 @@ void testApp::clearBundle() {
 	bundle.clear();
 }
 
+void testApp::addTrackingMessages() {
+    if(tracker.getFound()) {
+        addMessage("/found", 1);
+        
+        ofVec2f position = tracker.getPosition();
+        addMessage("/pose/position", position);
+        scale = tracker.getScale();
+        addMessage("/pose/scale", scale);
+        ofVec3f orientation = tracker.getOrientation();
+        addMessage("/pose/orientation", orientation);
+        
+        addMessage("/gesture/mouth/width", tracker.getGesture(ofxFaceTracker::MOUTH_WIDTH));
+        addMessage("/gesture/mouth/height", tracker.getGesture(ofxFaceTracker::MOUTH_HEIGHT));
+        addMessage("/gesture/eyebrow/left", tracker.getGesture(ofxFaceTracker::LEFT_EYEBROW_HEIGHT));
+        addMessage("/gesture/eyebrow/right", tracker.getGesture(ofxFaceTracker::RIGHT_EYEBROW_HEIGHT));
+        addMessage("/gesture/eye/left", tracker.getGesture(ofxFaceTracker::LEFT_EYE_OPENNESS));
+        addMessage("/gesture/eye/right", tracker.getGesture(ofxFaceTracker::RIGHT_EYE_OPENNESS));
+        addMessage("/gesture/jaw", tracker.getGesture(ofxFaceTracker::JAW_OPENNESS));
+        addMessage("/gesture/nostrils", tracker.getGesture(ofxFaceTracker::NOSTRIL_FLARE));
+    } else {
+        addMessage("/found", 0);
+    }
+}
+
 #pragma mark - Application Lifecycle
 void testApp::setup() {
+    settingsView = [[SettingsOverlay alloc] initWithNibName:@"SettingsOverlay" bundle:nil];
+    [ofxiPhoneGetGLView() addSubview:settingsView.view];
+    
 	ofSetVerticalSync(true);
 #ifdef TARGET_OSX
 	ofSetDataPathRoot("../Resources/data/");
 #endif
     tracker.setRescale(0.125);
-	loadSettings();
+	
+    loadSettings();
 }
 
 void testApp::update() {
@@ -68,29 +100,7 @@ void testApp::update() {
 		tracker.update(toCv(image));//toCv(*videoSource));
         
 		clearBundle();
-        
-		if(tracker.getFound()) {
-			addMessage("/found", 1);
-            
-			ofVec2f position = tracker.getPosition();
-			addMessage("/pose/position", position);
-			scale = tracker.getScale();
-			addMessage("/pose/scale", scale);
-			ofVec3f orientation = tracker.getOrientation();
-			addMessage("/pose/orientation", orientation);
-            
-			addMessage("/gesture/mouth/width", tracker.getGesture(ofxFaceTracker::MOUTH_WIDTH));
-			addMessage("/gesture/mouth/height", tracker.getGesture(ofxFaceTracker::MOUTH_HEIGHT));
-			addMessage("/gesture/eyebrow/left", tracker.getGesture(ofxFaceTracker::LEFT_EYEBROW_HEIGHT));
-			addMessage("/gesture/eyebrow/right", tracker.getGesture(ofxFaceTracker::RIGHT_EYEBROW_HEIGHT));
-			addMessage("/gesture/eye/left", tracker.getGesture(ofxFaceTracker::LEFT_EYE_OPENNESS));
-			addMessage("/gesture/eye/right", tracker.getGesture(ofxFaceTracker::RIGHT_EYE_OPENNESS));
-			addMessage("/gesture/jaw", tracker.getGesture(ofxFaceTracker::JAW_OPENNESS));
-			addMessage("/gesture/nostrils", tracker.getGesture(ofxFaceTracker::NOSTRIL_FLARE));
-		} else {
-			addMessage("/found", 0);
-		}
-        
+        addTrackingMessages();
 		sendBundle();
         
 		rotationMatrix = tracker.getRotationMatrix();
@@ -165,20 +175,21 @@ void testApp::draw() {
 	ofSetColor(255);
 	videoSource->draw(0, 0);
     
-    drawOscDestination(10, 20);
-    drawStatus(10, 40);
-    drawSelectedCamera(10, 60);
-    drawFPS(10, 80);
-    
-    
-	if(!bUseCamera) {
-		ofSetColor(255, 0, 0);
-		ofDrawBitmapString("speed "+ofToString(movie.getSpeed()), ofGetWidth()-100, 20);
-	}
+    if (settingsView.overlay.hidden) {
+        drawOscDestination(10, 20);
+        drawStatus(10, 40);
+        drawSelectedCamera(10, 60);
+        drawFPS(10, 80);
+        
+        
+        if(!bUseCamera) {
+            ofSetColor(255, 0, 0);
+            ofDrawBitmapString("speed "+ofToString(movie.getSpeed()), ofGetWidth()-100, 20);
+        }
+    }
 }
 
 void testApp::exit(){
-
 }
 
 
@@ -325,7 +336,7 @@ void testApp::touchMoved(ofTouchEventArgs & touch){
 }
 
 void testApp::touchUp(ofTouchEventArgs & touch){
-    bDrawMesh = !bDrawMesh;
+
 }
 
 void testApp::touchDoubleTap(ofTouchEventArgs & touch){

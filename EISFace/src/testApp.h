@@ -17,7 +17,7 @@ typedef enum _cameraId {
 
 class testApp : public ofxiPhoneApp{
 private:
-    
+    void addTrackingMessages();
     void drawStringWithShadow(string string, int x, int y);
     void drawStatus(int x, int y);
     void drawFPS(int x, int y);
@@ -54,6 +54,13 @@ public:
     void gotMemoryWarning();
     void deviceOrientationChanged(int newOrientation);
     
+    //void gotMessage(ofMessage msg);
+	
+    void drawGrid(float x, float y);
+    
+	//void setUIOverlay();
+    void setUISettings();
+    
 #pragma mark - Member Variables
     bool bUseCamera, bPaused;
     
@@ -78,6 +85,15 @@ public:
 
     ofImage image;
     cameraId selectedCamera;
+    
+	bool hideGUI;
+	
+	float red, green, blue;
+	bool bdrawGrid;
+	bool bdrawPadding;
+    
+    float *buffer;
+    ofImage *img;
 };
 
 
