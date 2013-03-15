@@ -79,7 +79,11 @@ void testApp::addTrackingMessages() {
 void testApp::setup() {
     loadSettings();
     
-    settingsView = [[SettingsOverlay alloc] initWithNibName:@"SettingsOverlay" bundle:nil];
+    if (IS_IPAD()) {
+        settingsView = [[SettingsOverlay alloc] initWithNibName:@"SettingsOverlayIpad" bundle:nil];
+    } else {
+        settingsView = [[SettingsOverlay alloc] initWithNibName:@"SettingsOverlay" bundle:nil];
+    }
     [ofxiPhoneGetGLView() addSubview:settingsView.view];
     settingsView.overlay.hidden = YES;
     
