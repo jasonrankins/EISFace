@@ -91,6 +91,7 @@ public:
 	float red, green, blue;
 	bool bdrawGrid;
 	bool bdrawPadding;
+    bool bDrawConsole;
     
     float *buffer;
     ofImage *img;

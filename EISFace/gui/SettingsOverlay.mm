@@ -13,12 +13,15 @@
 @end
 
 @implementation SettingsOverlay
-@synthesize overlay;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     myApp = (testApp*)ofGetAppPtr();
+    self.ipTextField.text = [NSString stringWithUTF8String:myApp->host.c_str()];
+    self.portTextField.text = [NSString stringWithFormat:@"%d", myApp->port];
+    self.meshToggle.on = myApp->bDrawMesh;
+    self.consoleToggle.on = myApp->bDrawConsole;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -29,21 +32,41 @@
 }
 
 - (IBAction)openSettings:(id)sender {
-    overlay.hidden = NO;
-    settingsButton.hidden = YES;
+    self.overlay.hidden = NO;
+    self.settingsButton.hidden = YES;
     myApp->bPaused = true;
 }
 
 - (IBAction)closeSettings:(id)sender {
-    overlay.hidden = YES;
-    settingsButton.hidden = NO;
+    self.overlay.hidden = YES;
+    self.settingsButton.hidden = NO;
     myApp->bPaused = false;
 }
 
 - (IBAction)dismissKeyboard:(id)sender {
-    [ipTextField resignFirstResponder];
-    [portTextField resignFirstResponder];
+    [self.ipTextField resignFirstResponder];
+    [self.portTextField resignFirstResponder];
 }
 
+- (IBAction)switchToggled:(id)sender {
+    if (sender == self.meshToggle) {
+        myApp->bdrawGrid = self.meshToggle.isOn;
+    } else if (sender == self.consoleToggle) {
+        myApp->bDrawConsole = self.consoleToggle.isOn;
+    }
+}
+
+- (IBAction)reset:(id)sender {
+    myApp->tracker.reset();
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField == self.ipTextField) {
+        myApp->host = ofToString([self.ipTextField.text UTF8String]);
+    } else if (textField == self.portTextField) {
+        myApp->port = self.portTextField.text.intValue;
+    }
+    myApp->osc.setup(myApp->host, myApp->port);
+}
 
 @end

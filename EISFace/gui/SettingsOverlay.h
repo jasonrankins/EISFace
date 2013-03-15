@@ -10,21 +10,22 @@
 #include "testApp.h"
 
 @interface SettingsOverlay : UIViewController <UITextFieldDelegate> {
-    IBOutlet UITextField *ipTextField;
-    IBOutlet UITextField *portTextField;
-    IBOutlet UISwitch *meshToggle;
-    IBOutlet UISwitch *consoleToggle;
     IBOutlet UIButton *resetButton;
-    IBOutlet UIButton *settingsButton;
-    IBOutlet UIView * overlay;
     //TODO: Add camera & flash selection options
 	testApp *myApp;
 }
 
-@property (nonatomic, strong) UIView * overlay;
+@property (nonatomic, strong) IBOutlet UIView * overlay;
+@property (nonatomic, strong) IBOutlet UIButton *settingsButton;
+@property (nonatomic, strong) IBOutlet UITextField *ipTextField;
+@property (nonatomic, strong) IBOutlet UITextField *portTextField;
+@property (nonatomic, strong) IBOutlet UISwitch *meshToggle;
+@property (nonatomic, strong) IBOutlet UISwitch *consoleToggle;
 
 - (IBAction)openSettings:(id)sender;
 - (IBAction)closeSettings:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
+- (IBAction)switchToggled:(id)sender;
+- (IBAction)reset:(id)sender;
 
 @end

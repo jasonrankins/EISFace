@@ -77,16 +77,17 @@ void testApp::addTrackingMessages() {
 
 #pragma mark - Application Lifecycle
 void testApp::setup() {
+    loadSettings();
+    
     settingsView = [[SettingsOverlay alloc] initWithNibName:@"SettingsOverlay" bundle:nil];
     [ofxiPhoneGetGLView() addSubview:settingsView.view];
+    settingsView.overlay.hidden = YES;
     
 	ofSetVerticalSync(true);
 #ifdef TARGET_OSX
 	ofSetDataPathRoot("../Resources/data/");
 #endif
     tracker.setRescale(0.125);
-	
-    loadSettings();
 }
 
 void testApp::update() {
@@ -142,7 +143,9 @@ void testApp::drawStatus(int x, int y) {
 	} else {
 		status = "searching for face";
 	}
-    drawStringWithShadow(status, x, y);
+    if (bDrawConsole) {
+        drawStringWithShadow(status, x, y);
+    }
 }
 
 void testApp::drawFPS(int x, int y) {
@@ -176,12 +179,13 @@ void testApp::draw() {
 	videoSource->draw(0, 0);
     
     if (settingsView.overlay.hidden) {
-        drawOscDestination(10, 20);
         drawStatus(10, 40);
-        drawSelectedCamera(10, 60);
-        drawFPS(10, 80);
-        
-        
+        if(bDrawConsole) {
+            drawOscDestination(10, 20);
+            drawSelectedCamera(10, 60);
+            drawFPS(10, 80);
+        }
+     
         if(!bUseCamera) {
             ofSetColor(255, 0, 0);
             ofDrawBitmapString("speed "+ofToString(movie.getSpeed()), ofGetWidth()-100, 20);
