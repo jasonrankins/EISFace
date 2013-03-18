@@ -1,0 +1,81 @@
+e j i e s (version 2.0)
+by Emmanuel Jourdan, Ircam
+This version requires Max 5.0.0 or higher (5.0.8 or higher is highly recommended). If you want to use ejies with a previous version or Max, you might want to download ejies 1.58.
+
+Java externals:
+- ej.dx2x: create a list from intervals
+- ej.fplay: Non-graphical multi-breakpoint function editor 
+- ej.ftom: Frequency to MIDI (with tuning adjustment, works for lists)
+- ej.l2buffer: fill a buffer~ with a list 
+- ej.lchange: aware of list changes
+- ej.lclip: constrains a list within a certain range
+- ej.ldrunk: drunk for list
+- ej.linterp: more than a list interpolator 
+- ej.lop: basic mathematic operations on (big) list
+- ej.lquant: Quantize a stream of number or a list (sort of multiple rounding process)
+- ej.lscale: maps input range of lists to output range
+- ej.lslide: smooth-out changes in list
+- ej.mmmm: calculate minimum, mean, median and maximum
+- ej.mtof: MIDI to Frequency (with tuning adjustment, works for lists)
+- ej.urn: like urn, for larger random range
+- ej.x2dx: get the interval between successive values of a list
+
+JS:
+- ej.4m.js: (obsolet) calculate minimum, mean, median and maximum
+- ej.cc.js: Change object Color
+- ej.cn.js: Change Name of named object
+- ej.cycle.js: send value to different outlets
+- ej.dn.js: display a named object
+- ej.lock.js: get/set locked mode
+- ej.lui.js: use the arguement to load a jsui file.
+- ej.nthru.js: like thru object (number of inlet/outlet can change)
+- ej.op.js: Open subPatcher
+- ej.route.js: route data types
+
+JSUI:
+- ej.function.js: multi bpf editor (compatible with the function object)
+- ej.led.js: new jsui... which does the same as the standard LED object / button object
+- ej.numbox.js: an alternative number box
+
+Abstractions:
+- ej.dialog: alternative dialog box for text entry
+- ej.jit.preview: (BPatcher) Patcher window with slowing down
+- ej.line: multi-segment line
+- ej.mout~: panpot on multiple output
+- ej.vdb~: Variable delay without clicks or transposition (cheaper than vdb~ in the Bennies)
+- ej.vdb-sig~: Same as ej.vdb~ but accepts signal as delay time
+- jit.getparam: grab attributes/message from jitter (and others?) objects
+- jit.fullscreen: create a jit.window on the second screen
+- kaf: kill and activate finder (OS X only, shell object required)
+- kd&u: report key down (1) and up (0)
+- ptt: push to talk (usefull during conferences...)
+- splay~: sound file player with interface
+- stout~: control stereo (replace dac~ or ezdac~)
+
+Unclassified:
+Collection of Aqua sliders.
+
+
+Other:
+- Installation.command: Bash script (MacOS X only) which allows you to install the ejies.
+- Unstallation.command: Bash script (MacOS X only) which allows you to uninstall the ejies (Why would you do that?).
+
+Automatic installation for MacOS X:
+- Double click on Installation.command and follow the instructions...
+- At the end of the installation you can quit the Terminal application.
+- If the installation doesn't work... you might have some problem of permission. follow the windows installation procedure.
+
+Manual installation (MacOS or Windows):
+- put the CONTENTS of the ejies-extras folder in the ../Max5/patches/extras folder
+- put the CONTENTS of the ejies-init folder in the C74:/init folder
+- put the CONTENTS (ej.jar) of the ejies-java folder in the C74:/java/lib folder
+- put the CONTENTS of the ejies-jsui folder in the C74:/jsui-library folder
+- put the CONTENTS of the ejies-jsextensions folder in the C74:/jsextensions folder
+- put the CONTENTS of the ejies-prototypes folder in the ./Max5/patches/object-protypes/ folder
+- put the ejies-obj folder in the C74:/ejies or whatever you want in the Max Search path
+- put the ejies-help folder in the C74:/ejies or whatever you want in the Max Search path
+- put the ejies-javadoc folder in the ../Max5/java-doc/ or whatever you want (in the Max Search path or not...)
+
+Contact:
+manu(at)e--j.com
+emmanuel.jourdan(at)ircam.fr
