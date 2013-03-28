@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C3006</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -440,7 +440,6 @@
 						<string key="NSFrame">{{704, 20}, {44, 44}}</string>
 						<reference key="NSSuperview" ref="937086491"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="430243907"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -552,6 +551,22 @@
 						<int key="IBEventType">13</int>
 					</object>
 					<int key="connectionID">200</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="162876745"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">203</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="257670228"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">202</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -2129,8 +2144,8 @@
 				<boolean value="NO" key="159.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="160.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array key="160.IBViewMetadataConstraints">
-					<reference ref="224350836"/>
 					<reference ref="1030996335"/>
+					<reference ref="224350836"/>
 				</array>
 				<boolean value="NO" key="160.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="161.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -2147,8 +2162,8 @@
 				<boolean value="NO" key="163.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="164.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array key="164.IBViewMetadataConstraints">
-					<reference ref="299896115"/>
 					<reference ref="398445334"/>
+					<reference ref="299896115"/>
 				</array>
 				<boolean value="NO" key="164.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="165.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -2160,8 +2175,8 @@
 				<boolean value="NO" key="166.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="167.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array key="167.IBViewMetadataConstraints">
-					<reference ref="738569045"/>
 					<reference ref="708519433"/>
+					<reference ref="738569045"/>
 				</array>
 				<boolean value="NO" key="167.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="168.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -2215,7 +2230,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">201</int>
+			<int key="maxID">203</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

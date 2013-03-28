@@ -91,7 +91,7 @@ void testApp::setup() {
 #ifdef TARGET_OSX
 	ofSetDataPathRoot("../Resources/data/");
 #endif
-    tracker.setRescale(0.125);
+    tracker.setRescale(0.25);
 }
 
 void testApp::update() {
@@ -180,7 +180,7 @@ void testApp::drawOscDestination(int x, int y) {
 
 void testApp::draw() {
 	ofSetColor(255);
-	videoSource->draw(0, 0);
+	videoSource->draw(0, 0, ofGetWidth(), ofGetHeight());
     
     if (settingsView.overlay.hidden) {
         drawStatus(10, 40);
