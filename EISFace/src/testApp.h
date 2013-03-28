@@ -82,8 +82,7 @@ public:
     ofMatrix4x4 rotationMatrix;
     
     bool bDrawMesh;
-
-    ofImage image;
+    
     cameraId selectedCamera;
     
 	bool hideGUI;
