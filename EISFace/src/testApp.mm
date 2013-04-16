@@ -100,9 +100,9 @@ void testApp::update() {
     
 	videoSource->update();
 	if(videoSource->isFrameNew()) {
-        //image.setFromPixels(videoSource->getPixelsRef());
-        image.setFromPixels(cam.getPixels(), cam.getWidth(), cam.getHeight(), OF_IMAGE_COLOR);
-		tracker.update(toCv(image));//toCv(*videoSource));
+        ofPixels proxy;
+        proxy.setFromExternalPixels(cam.getPixels(), cam.getWidth(), cam.getHeight(), 3);
+		tracker.update(toCv(proxy));
         
 		clearBundle();
         addTrackingMessages();
