@@ -19,6 +19,9 @@
 @property (nonatomic, strong) IBOutlet UIButton *settingsButton;
 @property (nonatomic, strong) IBOutlet UITextField *ipTextField;
 @property (nonatomic, strong) IBOutlet UITextField *portTextField;
+@property (nonatomic, strong) IBOutlet UITextField *iterationsTextField;
+@property (nonatomic, strong) IBOutlet UITextField *attemptsTextField;
+@property (nonatomic, strong) IBOutlet UITextField *scaleTextField;
 @property (nonatomic, strong) IBOutlet UISwitch *meshToggle;
 @property (nonatomic, strong) IBOutlet UISwitch *consoleToggle;
 

@@ -154,6 +154,9 @@ void testApp::drawStatus(int x, int y) {
 
 void testApp::drawFPS(int x, int y) {
     string fps = ofToString((int) ofGetFrameRate());
+    fps = fps + " " + ofToString((int) tracker.getAttempts())
+        + " " + ofToString((int) tracker.getIterations())
+        + " " + ofToString((double) tracker.getRescale());
     drawStringWithShadow(fps, x, y);
 }
 
@@ -186,8 +189,8 @@ void testApp::draw() {
         drawStatus(10, 40);
         if(bDrawConsole) {
             drawOscDestination(10, 20);
-            drawSelectedCamera(10, 60);
-            drawFPS(10, 80);
+            drawFPS(10, 60);
+            //drawSelectedCamera(10, 80);
         }
      
         if(!bUseCamera) {
