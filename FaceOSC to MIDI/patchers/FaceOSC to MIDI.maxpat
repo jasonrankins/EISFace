@@ -17,7 +17,7 @@
 		"gridonopen" : 0,
 		"gridsize" : [ 15.0, 15.0 ],
 		"gridsnaponopen" : 0,
-		"statusbarvisible" : 2,
+		"statusbarvisible" : 0,
 		"toolbarvisible" : 1,
 		"boxanimatetime" : 200,
 		"imprint" : 0,
@@ -950,7 +950,7 @@
 					"maxclass" : "panel",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 41.0, 127.0, 598.0, 4.0 ]
+					"patching_rect" : [ 41.0, 127.0, 652.0, 4.0 ]
 				}
 
 			}
@@ -6403,22 +6403,22 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "faceosc-parser.maxpat",
-				"bootpath" : "/Users/jasonrankins/Development/EISFace/Patches",
+				"bootpath" : "/Users/jasonrankins/Documents/Max/Projects/FaceOSC to MIDI/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "value-scaler.maxpat",
-				"bootpath" : "/Users/jasonrankins/Development/EISFace/Patches",
+				"bootpath" : "/Users/jasonrankins/Documents/Max/Projects/FaceOSC to MIDI/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "running-average.js",
-				"bootpath" : "/Users/jasonrankins/Development/EISFace/Patches",
-				"patcherrelativepath" : ".",
+				"bootpath" : "/Users/jasonrankins/Documents/Max/Projects/FaceOSC to MIDI/code",
+				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

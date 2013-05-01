@@ -175,7 +175,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 510.5, 54.0, 25.0, 25.0 ]
 				}
 
@@ -296,7 +296,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 338.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -323,7 +323,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 267.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -417,7 +417,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 652.5, 54.0, 25.0, 25.0 ]
 				}
 
@@ -443,7 +443,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 411.5, 54.0, 25.0, 25.0 ]
 				}
 
@@ -469,7 +469,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 560.5, 54.0, 25.0, 25.0 ]
 				}
 
@@ -495,7 +495,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "float" ],
 					"patching_rect" : [ 182.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -521,7 +521,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "float" ],
 					"patching_rect" : [ 101.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -547,7 +547,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 59.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -937,14 +937,6 @@
 					"source" : [ "obj-67", 0 ]
 				}
 
-			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "running-average.js",
-				"bootpath" : "/Users/jasonrankins/Development/EISFace/Patches",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
 			}
  ]
 	}
