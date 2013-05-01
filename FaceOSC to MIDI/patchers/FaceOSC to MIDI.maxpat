@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 83.0, 87.0, 1034.0, 643.0 ],
+		"rect" : [ 306.0, 92.0, 1034.0, 643.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -6403,21 +6403,21 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "faceosc-parser.maxpat",
-				"bootpath" : "/Users/jasonrankins/Documents/Max/Projects/FaceOSC to MIDI/patchers",
+				"bootpath" : "/Users/jasonrankins/Development/EISFace/FaceOSC to MIDI/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "value-scaler.maxpat",
-				"bootpath" : "/Users/jasonrankins/Documents/Max/Projects/FaceOSC to MIDI/patchers",
+				"bootpath" : "/Users/jasonrankins/Development/EISFace/FaceOSC to MIDI/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "running-average.js",
-				"bootpath" : "/Users/jasonrankins/Documents/Max/Projects/FaceOSC to MIDI/code",
+				"bootpath" : "/Users/jasonrankins/Development/EISFace/FaceOSC to MIDI/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
