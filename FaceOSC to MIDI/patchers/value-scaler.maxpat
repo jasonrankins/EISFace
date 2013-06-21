@@ -8,7 +8,7 @@
 			"architecture" : "x86"
 		}
 ,
-		"rect" : [ 708.0, 274.0, 741.0, 507.0 ],
+		"rect" : [ 646.0, 274.0, 741.0, 507.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -97,7 +97,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 90.5, 493.0, 52.0, 20.0 ],
+					"patching_rect" : [ 171.0, 473.0, 52.0, 20.0 ],
 					"text" : "bypass"
 				}
 
@@ -110,7 +110,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 35.0, 481.0, 41.0, 32.0 ]
+					"patching_rect" : [ 112.0, 461.0, 41.0, 32.0 ]
 				}
 
 			}
@@ -175,7 +175,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 510.5, 54.0, 25.0, 25.0 ]
 				}
 
@@ -296,7 +296,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 338.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -323,7 +323,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 267.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -417,7 +417,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 652.5, 54.0, 25.0, 25.0 ]
 				}
 
@@ -443,7 +443,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 411.5, 54.0, 25.0, 25.0 ]
 				}
 
@@ -469,7 +469,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 560.5, 54.0, 25.0, 25.0 ]
 				}
 
@@ -495,7 +495,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 182.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -521,7 +521,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 101.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -547,7 +547,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 59.0, 54.0, 25.0, 25.0 ]
 				}
 
@@ -937,6 +937,14 @@
 					"source" : [ "obj-67", 0 ]
 				}
 
+			}
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "running-average.js",
+				"bootpath" : "/Users/jasonrankins/Development/EISFace/FaceOSC to MIDI/code",
+				"patcherrelativepath" : "../code",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
  ]
 	}

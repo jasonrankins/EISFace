@@ -2,8 +2,8 @@
 	"name" : "FaceOSC to MIDI",
 	"version" : 1,
 	"creationdate" : -844761295,
-	"modificationdate" : -844760457,
-	"viewrect" : [ 32.0, 89.0, 296.0, 595.0 ],
+	"modificationdate" : -840353319,
+	"viewrect" : [ 83.0, 89.0, 296.0, 595.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -16,12 +16,12 @@
 				"toplevel" : 1
 			}
 ,
-			"faceosc-parser.maxpat" : 			{
+			"value-scaler.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
 ,
-			"value-scaler.maxpat" : 			{
+			"faceosc-parser.maxpat" : 			{
 				"kind" : "patcher",
 				"local" : 1
 			}
@@ -34,13 +34,17 @@
 		}
 ,
 		"code" : 		{
-			"autobot.class" : 			{
-				"kind" : "java",
+			"running-average.js" : 			{
+				"kind" : "javascript",
 				"local" : 1
 			}
 ,
-			"running-average.js" : 			{
-				"kind" : "javascript",
+			"max.jar" : 			{
+				"kind" : "java"
+			}
+,
+			"autobot.class" : 			{
+				"kind" : "java",
 				"local" : 1
 			}
 ,
@@ -69,5 +73,5 @@
 
 	}
 ,
-	"detailsvisible" : 0
+	"detailsvisible" : 1
 }
