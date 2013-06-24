@@ -17,7 +17,6 @@
 		17b2e63d22c42733f7f4053c8ba74518 /* Helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3039c2721ab6c127384539489c788f52 /* Helpers.cpp */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		1b9ae648599dc6816bd39dcc62866a04 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63b69432f225f4cd0c4a10fc8bee9d1b /* tinyxml.cpp */; };
 		1d144c8dffa8cd67b4184e72e933ca77 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 073bbb4fbc2130571433f257204ab8f5 /* ofxBaseGui.cpp */; };
 		205b87445605ca6483769cdcd9de8270 /* Flow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = a32458a21e5f7eeb49dadc763e469afc /* Flow.cpp */; };
 		26b4c3e83acc9306ae688360cc7a4ac2 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96efc7a674c8773f013aaebae5bb17f6 /* Expression.cpp */; };
@@ -55,18 +54,24 @@
 		E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
 		E4D8936E11527B74007E1F53 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936B11527B74007E1F53 /* main.mm */; };
 		E4D8936F11527B74007E1F53 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936D11527B74007E1F53 /* testApp.mm */; };
-		EA0C488216F2C66200965728 /* SettingsOverlayIpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA0C488116F2C66200965728 /* SettingsOverlayIpad.xib */; };
+		EA02C32D1775360B00A80394 /* ETF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA02C32B1775360B00A80394 /* ETF.cpp */; };
+		EA02C32E1775360B00A80394 /* fdog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA02C32C1775360B00A80394 /* fdog.cpp */; };
+		EA02C3351775365000A80394 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA02C3311775365000A80394 /* tinyxml.cpp */; };
+		EA02C3361775365000A80394 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA02C3331775365000A80394 /* tinyxmlerror.cpp */; };
+		EA02C3371775365000A80394 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA02C3341775365000A80394 /* tinyxmlparser.cpp */; };
+		EA02C352177538C300A80394 /* glu-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA02C348177538C300A80394 /* glu-ios.a */; };
+		EA02C353177538C300A80394 /* glu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA02C349177538C300A80394 /* glu.a */; };
+		EA1F03061777DC0E00B181A9 /* SettingsOverlayIpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1F03041777DC0E00B181A9 /* SettingsOverlayIpad.xib */; };
+		EA1F03071777DC0E00B181A9 /* SettingsOverlayIpadLandscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA1F03051777DC0E00B181A9 /* SettingsOverlayIpadLandscape.xib */; };
 		EA9030CF16F17A78001AA249 /* SettingsOverlay.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA9030CD16F17A78001AA249 /* SettingsOverlay.mm */; };
 		EA9030D216F17A8E001AA249 /* SettingsOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA9030D116F17A8E001AA249 /* SettingsOverlay.xib */; };
 		a364421c952ce9bc2c5d2336abdeec63 /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6cff932b0463e25a5753acde14687649 /* ofxSlider.cpp */; };
 		aaef872d3796ff5909da3083237565fa /* PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = e3f8511edaf3b2f6118171178f930197 /* PDM.cc */; };
 		acc150eeddea84b1487203622749679b /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15265fc8e4feea099bb5e445a54f0a82 /* UdpSocket.cpp */; };
-		b293d67bf3e8975458969b534026e1e4 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2d2d1446085801a26b88af0e9ae84cc9 /* tinyxmlerror.cpp */; };
 		b3b45769804656c1de9fc1062ebd1a09 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = b3f89530f13162acc94d79f5f5497b47 /* OscReceivedElements.cpp */; };
 		b922b3a97b61bb43c90a789e6b77fbba /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = e4af8fa6b9b20fc203a112cdfd963755 /* ofxOscReceiver.cpp */; };
 		bb18ea69789b6cbca40b6aefe7840db9 /* ContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = b51452c46ceffdec675dd0b9af655974 /* ContourFinder.cpp */; };
 		bb5e214b32e344f8b7a26b29792c1dff /* ofxCvContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = b1c1a67ea6897d61ad1a1013abb7005b /* ofxCvContourFinder.cpp */; };
-		bdd592f3a393b6ac431c678968d2d183 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = cdf53712af924744a9721dc3fb689096 /* tinyxmlparser.cpp */; };
 		d106d0cd3c2ab4d3d5cf9caa59790265 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = aa04a5c303d50204d3aff029526c67f5 /* ofxOscMessage.cpp */; };
 		d140a468938d7ba4f3fe2dab40ced8e9 /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c01ec02cad75f5386947eaa33c280fc7 /* ofxOscBundle.cpp */; };
 		d1ef7d5e8a79f900147d1da19f8a56cd /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = a2207a4a78732005d3859e97d73c8e77 /* OscTypes.cpp */; };
@@ -131,7 +136,6 @@
 		2b2af971817daf900a630b49a39a47ff /* OscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPacketListener.h; path = ../openFrameworks/addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h; sourceTree = SOURCE_ROOT; };
 		2c537f9d0944beb8244ba05e612d0136 /* ofOscParameter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofOscParameter.h; path = ../openFrameworks/addons/ofxGui/src/ofOscParameter.h; sourceTree = SOURCE_ROOT; };
 		2cb862b0552433779ac2963853a1a650 /* PAW.cc */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = PAW.cc; path = ../openFrameworks/addons/ofxFaceTracker/libs/FaceTracker/src/lib/PAW.cc; sourceTree = SOURCE_ROOT; };
-		2d2d1446085801a26b88af0e9ae84cc9 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlerror.cpp; path = ../openFrameworks/addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
 		2dd4b09012e0d053b526a80938cf793b /* ExpressionClassifier.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ExpressionClassifier.h; path = ../openFrameworks/addons/ofxFaceTracker/src/ExpressionClassifier.h; sourceTree = SOURCE_ROOT; };
 		3039c2721ab6c127384539489c788f52 /* Helpers.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Helpers.cpp; path = ../openFrameworks/addons/ofxCv/libs/ofxCv/src/Helpers.cpp; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhone_Prefix.pch; sourceTree = "<group>"; };
@@ -162,8 +166,6 @@
 		5cf0d66a6b871ea14b9c9019c7e68d12 /* FCheck.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FCheck.h; path = ../openFrameworks/addons/ofxFaceTracker/libs/FaceTracker/include/FaceTracker/FCheck.h; sourceTree = SOURCE_ROOT; };
 		606b3092c42cea73997ce59f53ef4081 /* OscReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscReceivedElements.h; path = ../openFrameworks/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h; sourceTree = SOURCE_ROOT; };
 		615dfa787eccbbe9327f99d8d003468a /* ofxUIRotarySlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIRotarySlider.h; path = ../openFrameworks/addons/ofxUI/src/ofxUIRotarySlider.h; sourceTree = SOURCE_ROOT; };
-		6391a5cacb9d35c37dd9418c417a962c /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../openFrameworks/addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
-		63b69432f225f4cd0c4a10fc8bee9d1b /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxml.cpp; path = ../openFrameworks/addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
 		6405f73c0502b8933dcb4871d1371a57 /* ofxCvConstants.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxCvConstants.h; path = ../openFrameworks/addons/ofxOpenCv/src/ofxCvConstants.h; sourceTree = SOURCE_ROOT; };
 		644a0a5fa10542fa9740ce03afc3b074 /* Tracker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Tracker.cpp; path = ../openFrameworks/addons/ofxCv/libs/ofxCv/src/Tracker.cpp; sourceTree = SOURCE_ROOT; };
 		667494a0a7de0044046c78dfcbc8691e /* NetworkingUtilsWin.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NetworkingUtilsWin.cpp; path = ../openFrameworks/addons/ofxOsc/libs/oscpack/src/ip/win32/NetworkingUtilsWin.cpp; sourceTree = SOURCE_ROOT; };
@@ -209,7 +211,22 @@
 		E4D8936B11527B74007E1F53 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = src/main.mm; sourceTree = SOURCE_ROOT; };
 		E4D8936C11527B74007E1F53 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
 		E4D8936D11527B74007E1F53 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = SOURCE_ROOT; };
-		EA0C488116F2C66200965728 /* SettingsOverlayIpad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsOverlayIpad.xib; sourceTree = "<group>"; };
+		EA02C3261775360B00A80394 /* ETF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETF.h; sourceTree = "<group>"; };
+		EA02C3271775360B00A80394 /* fdog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fdog.h; sourceTree = "<group>"; };
+		EA02C3281775360B00A80394 /* imatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imatrix.h; sourceTree = "<group>"; };
+		EA02C3291775360B00A80394 /* myvec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myvec.h; sourceTree = "<group>"; };
+		EA02C32B1775360B00A80394 /* ETF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ETF.cpp; sourceTree = "<group>"; };
+		EA02C32C1775360B00A80394 /* fdog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fdog.cpp; sourceTree = "<group>"; };
+		EA02C3311775365000A80394 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		EA02C3321775365000A80394 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		EA02C3331775365000A80394 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		EA02C3341775365000A80394 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		EA02C33F177538C300A80394 /* glu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glu.h; sourceTree = "<group>"; };
+		EA02C340177538C300A80394 /* gluos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gluos.h; sourceTree = "<group>"; };
+		EA02C348177538C300A80394 /* glu-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "glu-ios.a"; sourceTree = "<group>"; };
+		EA02C349177538C300A80394 /* glu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = glu.a; sourceTree = "<group>"; };
+		EA1F03041777DC0E00B181A9 /* SettingsOverlayIpad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsOverlayIpad.xib; path = gui/SettingsOverlayIpad.xib; sourceTree = "<group>"; };
+		EA1F03051777DC0E00B181A9 /* SettingsOverlayIpadLandscape.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsOverlayIpadLandscape.xib; path = gui/SettingsOverlayIpadLandscape.xib; sourceTree = "<group>"; };
 		EA9030CC16F17A78001AA249 /* SettingsOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsOverlay.h; path = gui/SettingsOverlay.h; sourceTree = "<group>"; };
 		EA9030CD16F17A78001AA249 /* SettingsOverlay.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SettingsOverlay.mm; path = gui/SettingsOverlay.mm; sourceTree = "<group>"; };
 		EA9030D116F17A8E001AA249 /* SettingsOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsOverlay.xib; path = gui/SettingsOverlay.xib; sourceTree = "<group>"; };
@@ -247,7 +264,6 @@
 		c9ca9621466dcc4353ce9901651d4b18 /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../openFrameworks/addons/ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
 		ca54f6a2c5ce06e92a805b0a393d542b /* ofxUIImageSampler.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxUIImageSampler.h; path = ../openFrameworks/addons/ofxUI/src/ofxUIImageSampler.h; sourceTree = SOURCE_ROOT; };
 		cd75f7cbdaa208e2ce1797329446f142 /* Calibration.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Calibration.cpp; path = ../openFrameworks/addons/ofxCv/libs/ofxCv/src/Calibration.cpp; sourceTree = SOURCE_ROOT; };
-		cdf53712af924744a9721dc3fb689096 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlparser.cpp; path = ../openFrameworks/addons/ofxXmlSettings/libs/tinyxmlparser.cpp; sourceTree = SOURCE_ROOT; };
 		d0f7c6a0146882291818b341e024b716 /* Expression.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Expression.h; path = ../openFrameworks/addons/ofxFaceTracker/src/Expression.h; sourceTree = SOURCE_ROOT; };
 		d11334a6fdad44d472ba2108bc513acb /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscOutboundPacketStream.h; path = ../openFrameworks/addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h; sourceTree = SOURCE_ROOT; };
 		d1160036523bb439a0463f062ac442f9 /* ofxOscSender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscSender.h; path = ../openFrameworks/addons/ofxOsc/src/ofxOscSender.h; sourceTree = SOURCE_ROOT; };
@@ -307,6 +323,8 @@
 				E41D400C13B39D2100A75A5D /* CoreMedia.framework in Frameworks */,
 				E41D400D13B39D2100A75A5D /* CoreVideo.framework in Frameworks */,
 				E41D400E13B39D2100A75A5D /* MapKit.framework in Frameworks */,
+				EA02C352177538C300A80394 /* glu-ios.a in Frameworks */,
+				EA02C353177538C300A80394 /* glu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,10 +470,7 @@
 		6e54289412d2d94f45a051132369530c /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				63b69432f225f4cd0c4a10fc8bee9d1b /* tinyxml.cpp */,
-				6391a5cacb9d35c37dd9418c417a962c /* tinyxml.h */,
-				2d2d1446085801a26b88af0e9ae84cc9 /* tinyxmlerror.cpp */,
-				cdf53712af924744a9721dc3fb689096 /* tinyxmlparser.cpp */,
+				EA02C32F1775365000A80394 /* tinyxml */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -531,6 +546,8 @@
 		90d509c72729d1998e28a98fae94d43a /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				EA02C338177538C300A80394 /* glu */,
+				EA02C3231775360B00A80394 /* CLD */,
 				85961bec127e2550aa7756c9a214eccd /* ofxCv */,
 			);
 			name = libs;
@@ -606,13 +623,105 @@
 			path = src;
 			sourceTree = SOURCE_ROOT;
 		};
+		EA02C3231775360B00A80394 /* CLD */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C3241775360B00A80394 /* include */,
+				EA02C32A1775360B00A80394 /* src */,
+			);
+			path = CLD;
+			sourceTree = "<group>";
+		};
+		EA02C3241775360B00A80394 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C3251775360B00A80394 /* CLD */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		EA02C3251775360B00A80394 /* CLD */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C3261775360B00A80394 /* ETF.h */,
+				EA02C3271775360B00A80394 /* fdog.h */,
+				EA02C3281775360B00A80394 /* imatrix.h */,
+				EA02C3291775360B00A80394 /* myvec.h */,
+			);
+			path = CLD;
+			sourceTree = "<group>";
+		};
+		EA02C32A1775360B00A80394 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C32B1775360B00A80394 /* ETF.cpp */,
+				EA02C32C1775360B00A80394 /* fdog.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EA02C32F1775365000A80394 /* tinyxml */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C3301775365000A80394 /* src */,
+			);
+			path = tinyxml;
+			sourceTree = "<group>";
+		};
+		EA02C3301775365000A80394 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C3311775365000A80394 /* tinyxml.cpp */,
+				EA02C3321775365000A80394 /* tinyxml.h */,
+				EA02C3331775365000A80394 /* tinyxmlerror.cpp */,
+				EA02C3341775365000A80394 /* tinyxmlparser.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EA02C338177538C300A80394 /* glu */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C33E177538C300A80394 /* include_ios */,
+				EA02C341177538C300A80394 /* lib */,
+			);
+			path = glu;
+			sourceTree = "<group>";
+		};
+		EA02C33E177538C300A80394 /* include_ios */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C33F177538C300A80394 /* glu.h */,
+				EA02C340177538C300A80394 /* gluos.h */,
+			);
+			path = include_ios;
+			sourceTree = "<group>";
+		};
+		EA02C341177538C300A80394 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C347177538C300A80394 /* ios */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		EA02C347177538C300A80394 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				EA02C348177538C300A80394 /* glu-ios.a */,
+				EA02C349177538C300A80394 /* glu.a */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
 		EA9030C916F17791001AA249 /* gui */ = {
 			isa = PBXGroup;
 			children = (
 				EA9030CC16F17A78001AA249 /* SettingsOverlay.h */,
 				EA9030CD16F17A78001AA249 /* SettingsOverlay.mm */,
 				EA9030D116F17A8E001AA249 /* SettingsOverlay.xib */,
-				EA0C488116F2C66200965728 /* SettingsOverlayIpad.xib */,
+				EA1F03041777DC0E00B181A9 /* SettingsOverlayIpad.xib */,
+				EA1F03051777DC0E00B181A9 /* SettingsOverlayIpadLandscape.xib */,
 			);
 			name = gui;
 			sourceTree = "<group>";
@@ -944,7 +1053,8 @@
 				E41D3ED713B38FB500A75A5D /* Project.xcconfig in Resources */,
 				E41D3EE613B3906D00A75A5D /* CoreOF.xcconfig in Resources */,
 				EA9030D216F17A8E001AA249 /* SettingsOverlay.xib in Resources */,
-				EA0C488216F2C66200965728 /* SettingsOverlayIpad.xib in Resources */,
+				EA1F03061777DC0E00B181A9 /* SettingsOverlayIpad.xib in Resources */,
+				EA1F03071777DC0E00B181A9 /* SettingsOverlayIpadLandscape.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,9 +1105,6 @@
 				b3b45769804656c1de9fc1062ebd1a09 /* OscReceivedElements.cpp in Sources */,
 				d1ef7d5e8a79f900147d1da19f8a56cd /* OscTypes.cpp in Sources */,
 				9212138e158b99ea18ab1a02b6c7ccf1 /* ofxXmlSettings.cpp in Sources */,
-				1b9ae648599dc6816bd39dcc62866a04 /* tinyxml.cpp in Sources */,
-				b293d67bf3e8975458969b534026e1e4 /* tinyxmlerror.cpp in Sources */,
-				bdd592f3a393b6ac431c678968d2d183 /* tinyxmlparser.cpp in Sources */,
 				62c869959729cffa1aaa3c4bf0eac8af /* ofxAccelerometer.cpp in Sources */,
 				15db47228c9c852b86cdf752e1a7957d /* Calibration.cpp in Sources */,
 				bb18ea69789b6cbca40b6aefe7840db9 /* ContourFinder.cpp in Sources */,
@@ -1026,6 +1133,11 @@
 				a364421c952ce9bc2c5d2336abdeec63 /* ofxSlider.cpp in Sources */,
 				e87cefbc7be262267078d0dd3f5e7148 /* ofxToggle.cpp in Sources */,
 				db2da37d5f1b7cab676cd82c00ae3554 /* ofxMultiTouch.cpp in Sources */,
+				EA02C32D1775360B00A80394 /* ETF.cpp in Sources */,
+				EA02C32E1775360B00A80394 /* fdog.cpp in Sources */,
+				EA02C3351775365000A80394 /* tinyxml.cpp in Sources */,
+				EA02C3361775365000A80394 /* tinyxmlerror.cpp in Sources */,
+				EA02C3371775365000A80394 /* tinyxmlparser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,6 +1217,14 @@
 				);
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/glu/lib/android/armeabi\"",
+					"\"$(SRCROOT)/glu/lib/android/armeabi-v7a\"",
+					"\"$(SRCROOT)/glu/lib/ios\"",
+					"\"$(SRCROOT)/glu/lib/vs\"",
+					"\"$(SRCROOT)/glu/lib/win_cb\"",
+				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1177,6 +1297,14 @@
 				);
 				INFOPLIST_FILE = "ofxiphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/glu/lib/android/armeabi\"",
+					"\"$(SRCROOT)/glu/lib/android/armeabi-v7a\"",
+					"\"$(SRCROOT)/glu/lib/ios\"",
+					"\"$(SRCROOT)/glu/lib/vs\"",
+					"\"$(SRCROOT)/glu/lib/win_cb\"",
+				);
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

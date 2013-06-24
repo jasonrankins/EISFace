@@ -28,6 +28,7 @@ public:
     
 #pragma mark - Function Declarations
     void loadSettings();
+    void saveSettings();
     
     void clearBundle();
     template <class T>

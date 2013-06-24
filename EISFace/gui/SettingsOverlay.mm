@@ -30,29 +30,6 @@
     [super viewDidLoad];
     myApp = (testApp*)ofGetAppPtr();
     [self updateValues];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)openSettings:(id)sender {
-    [self updateValues];
-    
-    self.overlay.hidden = NO;
-    self.settingsButton.hidden = YES;
-    myApp->bPaused = true;
-}
-
-- (IBAction)closeSettings:(id)sender {
-    myApp->tracker.reset();
-    
-    self.overlay.hidden = YES;
-    self.settingsButton.hidden = NO;
-    myApp->bPaused = false;
 }
 
 - (IBAction)dismissKeyboard:(id)sender {
@@ -95,12 +72,19 @@
     } else if (textField == self.scaleTextField) {
         myApp->tracker.setRescale(self.scaleTextField.text.doubleValue);
     }
+    myApp->saveSettings();
     myApp->osc.setup(myApp->host, myApp->port);
+    myApp->bPaused = false;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    myApp->bPaused = true;
 }
 
 @end

@@ -1,7 +1,6 @@
 #include "testApp.h"
 #include "SettingsOverlay.h"
 
-
 SettingsOverlay * settingsView;
 
 using namespace ofxCv;
@@ -70,8 +69,35 @@ void testApp::addTrackingMessages() {
         addMessage("/gesture/eye/right", tracker.getGesture(ofxFaceTracker::RIGHT_EYE_OPENNESS));
         addMessage("/gesture/jaw", tracker.getGesture(ofxFaceTracker::JAW_OPENNESS));
         addMessage("/gesture/nostrils", tracker.getGesture(ofxFaceTracker::NOSTRIL_FLARE));
+        
+        settingsView.eyebrows.text = [NSString stringWithFormat:@"%f, %f",
+                                      tracker.getGesture(ofxFaceTracker::LEFT_EYEBROW_HEIGHT),
+                                      tracker.getGesture(ofxFaceTracker::RIGHT_EYEBROW_HEIGHT)];
+        settingsView.eyes.text = [NSString stringWithFormat:@"%f, %f",
+                                  tracker.getGesture(ofxFaceTracker::LEFT_EYE_OPENNESS),
+                                  tracker.getGesture(ofxFaceTracker::RIGHT_EYE_OPENNESS)];
+        settingsView.nostrils.text = [NSString stringWithFormat:@"%f",
+                                      tracker.getGesture(ofxFaceTracker::NOSTRIL_FLARE)];
+        settingsView.mouth.text = [NSString stringWithFormat:@"(%f, %f)",
+                                   tracker.getGesture(ofxFaceTracker::MOUTH_WIDTH),
+                                   tracker.getGesture(ofxFaceTracker::MOUTH_HEIGHT)];
+        settingsView.jaw.text = [NSString stringWithFormat:@"%f",
+                                 tracker.getGesture(ofxFaceTracker::JAW_OPENNESS)];
+        settingsView.position.text = [NSString stringWithFormat:@"(%f, %f)",
+                                      position.x, position.y];
+        settingsView.orientation.text = [NSString stringWithFormat:@"(%f, %f, %f)",
+                                         orientation.x, orientation.y, orientation.z];
+        settingsView.scale.text = [NSString stringWithFormat:@"%f", scale];
     } else {
         addMessage("/found", 0);
+        settingsView.eyebrows.text = @"UNKNOWN";
+        settingsView.eyes.text = @"UNKNOWN";
+        settingsView.nostrils.text = @"UNKNOWN";
+        settingsView.mouth.text = @"UNKNOWN";
+        settingsView.jaw.text = @"UNKNOWN";
+        settingsView.position.text = @"UNKNOWN";
+        settingsView.orientation.text = @"UNKNOWN";
+        settingsView.scale.text = @"UNKNOWN";
     }
 }
 
@@ -84,17 +110,22 @@ void testApp::setup() {
     } else {
         settingsView = [[SettingsOverlay alloc] initWithNibName:@"SettingsOverlay" bundle:nil];
     }
-    [ofxiPhoneGetGLView() addSubview:settingsView.view];
-    settingsView.overlay.hidden = YES;
     
-	ofSetVerticalSync(true);
-#ifdef TARGET_OSX
-	ofSetDataPathRoot("../Resources/data/");
-#endif
-    tracker.setRescale(0.25);
+    [ofxiPhoneGetGLView() insertSubview:settingsView.view atIndex:0];
+    ofBackground(60, 60, 60);
+	ofSetVerticalSync(false);
 }
 
 void testApp::update() {
+    settingsView.fpsLabel.text = [NSString stringWithFormat:@"%d", (int)ofGetFrameRate()];
+    if (bPaused) {
+        settingsView.trackingStatus.text = @"PAUSED";
+	} else if(tracker.getFound()) {
+        settingsView.trackingStatus.text = @"TRACKING";
+    } else {
+        settingsView.trackingStatus.text = @"SEARCHING";
+    }
+    
 	if(bPaused)
 		return;
     
@@ -103,7 +134,6 @@ void testApp::update() {
         ofPixels proxy;
         proxy.setFromExternalPixels(cam.getPixels(), cam.getWidth(), cam.getHeight(), 3);
 		tracker.update(toCv(proxy));
-        
 		clearBundle();
         addTrackingMessages();
 		sendBundle();
@@ -123,14 +153,10 @@ void testApp::drawStringWithShadow(string string, int x, int y) {
 void testApp::drawStatus(int x, int y) {
     string status = "";
     
-    if(bPaused) {
-        status = "paused";
-	} else if(tracker.getFound()) {
-		status = "tracking face";
-        
+    if(!bPaused && tracker.getFound()) {
 		if(bDrawMesh) {
 			ofSetLineWidth(1);
-			//tracker.draw();
+			tracker.draw();
 			tracker.getImageMesh().drawWireframe();
             
 			ofPushView();
@@ -141,23 +167,11 @@ void testApp::drawStatus(int x, int y) {
 			ofScale(10,10,10);
 			ofDrawAxis(scale);
 			ofPopView();
-		} else {
-            status += " // mesh hidden";
         }
-	} else {
-		status = "searching for face";
 	}
     if (bDrawConsole) {
         drawStringWithShadow(status, x, y);
     }
-}
-
-void testApp::drawFPS(int x, int y) {
-    string fps = ofToString((int) ofGetFrameRate());
-    fps = fps + " " + ofToString((int) tracker.getAttempts())
-        + " " + ofToString((int) tracker.getIterations())
-        + " " + ofToString((double) tracker.getRescale());
-    drawStringWithShadow(fps, x, y);
 }
 
 void testApp::drawSelectedCamera(int x, int y) {
@@ -183,21 +197,8 @@ void testApp::drawOscDestination(int x, int y) {
 
 void testApp::draw() {
 	ofSetColor(255);
-	videoSource->draw(0, 0, ofGetWidth(), ofGetHeight());
-    
-    if (settingsView.overlay.hidden) {
-        drawStatus(10, 40);
-        if(bDrawConsole) {
-            drawOscDestination(10, 20);
-            drawFPS(10, 60);
-            //drawSelectedCamera(10, 80);
-        }
-     
-        if(!bUseCamera) {
-            ofSetColor(255, 0, 0);
-            ofDrawBitmapString("speed "+ofToString(movie.getSpeed()), ofGetWidth()-100, 20);
-        }
-    }
+	videoSource->draw(0, 0, videoSource->getWidth(), videoSource->getHeight());
+    drawStatus(10, 40);
 }
 
 void testApp::exit(){
@@ -205,37 +206,12 @@ void testApp::exit(){
 
 
 void testApp::keyPressed(int key) {
-	switch(key) {
-		case 'r':
-			tracker.reset();
-			break;
-		case 'm':
-			bDrawMesh = !bDrawMesh;
-			break;
-		case 'p':
-			bPaused = !bPaused;
-			break;
-		case OF_KEY_UP:
-			movie.setSpeed(ofClamp(movie.getSpeed()+0.2, -16, 16));
-			break;
-		case OF_KEY_DOWN:
-			movie.setSpeed(ofClamp(movie.getSpeed()-0.2, -16, 16));
-			break;
-	}
 }
 
 #pragma mark - Settings
 void testApp::loadSettings() {
 	ofxXmlSettings xml;
 	xml.loadFile("settings.xml");
-    
-	bool bUseCamera = true;
-    
-	xml.pushTag("source");
-	if(xml.getNumTags("useCamera") > 0) {
-		bUseCamera = xml.getValue("useCamera", 0);
-	}
-	xml.popTag();
     
 	xml.pushTag("camera");
 	if(xml.getNumTags("device") > 0) {
@@ -252,45 +228,17 @@ void testApp::loadSettings() {
 	camHeight = xml.getValue("height", 480);
 	cam.initGrabber(camWidth, camHeight);
 	xml.popTag();
-    
-	xml.pushTag("movie");
-	if(xml.getNumTags("filename") > 0) {
-		string filename = ofToDataPath((string) xml.getValue("filename", ""));
-		if(!movie.loadMovie(filename)) {
-			ofLog(OF_LOG_ERROR, "Could not load movie \"%s\", reverting to camera input", filename.c_str());
-			bUseCamera = true;
-		}
-		movie.play();
-	}
-	else {
-		ofLog(OF_LOG_ERROR, "Movie filename tag not set in settings, reverting to camera input");
-		bUseCamera = true;
-	}
-	if(xml.getNumTags("volume") > 0) {
-		float movieVolume = ofClamp(xml.getValue("volume", 1.0), 0, 1.0);
-		movie.setVolume(movieVolume);
-	}
-	if(xml.getNumTags("speed") > 0) {
-		float movieSpeed = ofClamp(xml.getValue("speed", 1.0), -16, 16);
-		movie.setSpeed(movieSpeed);
-	}
+
 	bPaused = false;
 	movieWidth = movie.getWidth();
 	movieHeight = movie.getHeight();
-	xml.popTag();
     
-	if(bUseCamera) {
-		ofSetWindowShape(camWidth, camHeight);
-		setVideoSource(true);
-	}
-	else {
-		ofSetWindowShape(movieWidth, movieHeight);
-		setVideoSource(false);
-	}
+    ofSetWindowShape(camWidth, camHeight);
+    setVideoSource(true);
     
 	xml.pushTag("face");
 	if(xml.getNumTags("rescale")) {
-		tracker.setRescale(xml.getValue("rescale", 1.));
+		tracker.setRescale(xml.getValue("rescale", 0.5));
 	}
 	if(xml.getNumTags("iterations")) {
 		tracker.setIterations(xml.getValue("iterations", 5));
@@ -312,20 +260,38 @@ void testApp::loadSettings() {
 	xml.popTag();
     
 	xml.pushTag("osc");
-	host = xml.getValue("host", "localhost");
+	host = xml.getValue("host", "255.255.255.255");
 	port = xml.getValue("port", 8338);
 	osc.setup(host, port);
+	xml.popTag();
+}
+
+void testApp::saveSettings() {
+	ofxXmlSettings xml;
     
+	xml.pushTag("camera");
+    xml.setValue("device", selectedCamera);
+    xml.setValue("width", 640);
+    xml.setValue("height", 480);
 	xml.popTag();
     
-	osc.setup(host, port);
+	xml.pushTag("face");
+    xml.setValue("rescale", tracker.getRescale());
+	xml.setValue("iterations", tracker.getIterations());
+    xml.setValue("attempts", tracker.getAttempts());
+    xml.setValue("drawMesh", bDrawMesh);
+	xml.popTag();
+    
+	xml.pushTag("osc");
+    xml.setValue("host", host);
+    xml.setValue("port", port);
+	xml.popTag();
+	
+    xml.saveFile("settings.xml");
 }
 
 void testApp::setVideoSource(bool useCamera) {
-    
-	bUseCamera = useCamera;
-    
-	if(bUseCamera) {
+	if(useCamera) {
 		videoSource = &cam;
 		sourceWidth = camWidth;
 		sourceHeight = camHeight;
@@ -360,7 +326,7 @@ void testApp::touchCancelled(ofTouchEventArgs & touch){
 
 #pragma mark - Application Delegate
 void testApp::lostFocus(){
-    
+    saveSettings();
 }
 
 void testApp::gotFocus(){
@@ -372,5 +338,16 @@ void testApp::gotMemoryWarning(){
 }
 
 void testApp::deviceOrientationChanged(int newOrientation){
-    
+//    if (IS_IPAD()) {
+//        ofSetOrientation(ofOrientation, false);
+//        SettingsOverlay *view;
+//        if (UIDeviceOrientationIsLandscape(newOrientation)) {
+//            view = [[SettingsOverlay alloc] initWithNibName:@"SettingsOverlayIpadLandscape" bundle:nil];
+//        } else {
+//            view = [[SettingsOverlay alloc] initWithNibName:@"SettingsOverlayIpad" bundle:nil];
+//        }
+//        [settingsView.view removeFromSuperview];
+//        settingsView = view;
+//        [ofxiPhoneGetGLView() insertSubview:settingsView.view atIndex:0];
+//    }
 }
