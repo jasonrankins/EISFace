@@ -2,8 +2,8 @@
 	"name" : "FaceOSC to MIDI",
 	"version" : 1,
 	"creationdate" : -844761295,
-	"modificationdate" : -840353319,
-	"viewrect" : [ 83.0, 89.0, 296.0, 595.0 ],
+	"modificationdate" : -839757019,
+	"viewrect" : [ 21.0, 89.0, 296.0, 595.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -37,10 +37,6 @@
 			"running-average.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
-			}
-,
-			"max.jar" : 			{
-				"kind" : "java"
 			}
 ,
 			"autobot.class" : 			{
